@@ -497,7 +497,7 @@ Crafting captivating dining room aesthetics with attention to detail, creativity
 
           <div class="contact-wrapper">
 
-            <form action="" class="contact-form">
+            <form class="contact-form" id="submit" action="#">
 
               <div class="wrapper-flex">
 
@@ -521,7 +521,7 @@ Crafting captivating dining room aesthetics with attention to detail, creativity
               <textarea name="message" id="message" required placeholder="Type Your Message"
                 class="input-field"></textarea>
 
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary" value="Send">
                 <span>Send Message</span>
 
                 <ion-icon name="paper-plane-outline"></ion-icon>
@@ -745,7 +745,34 @@ Crafting captivating dining room aesthetics with attention to detail, creativity
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    const name = document.getElementById('name');
+    const phone = document.getElementById('email');
+    const message = document.getElementById('message');
+    const submit = document.getElementById('submit');
+    
+    submit.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        let ebody = `
+        <h1>Name: </h1>${name.value}
+        <br>
+        <h1>Phone: </h1>${phone.value}
+        <br>
+        <h1>message: </h1>${message.value}
+        `;
+    
+        Email.send({
+            SecureToken : "6dc34775-1167-4a8c-b396-3e47467e87a2", //add your token here
+            To : 'contact.ganeshdecor@gmail.com', 
+            From : "msending432@gmail.com",
+            Subject : "New Entry",
+            Body : ebody
+        }).then(
+          message => alert(message)
+        );
+    });
+  </script>
 </body>
 
 </html>
