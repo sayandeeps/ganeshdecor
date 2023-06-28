@@ -101,17 +101,17 @@
             </p>
 
             <p class="form-text">
-              <span>🥳</span> Inorder to get the lastest update from us. Please:
+              <span>🥳</span> Inorder to get free consultation. Please:
 
 
 
 
             </p>
 
-            <form action="" class="hero-form">
-              <input type="email" name="email" required placeholder="Enter Your Email" class="email-field">
+            <form action="#contact" class="hero-form">
+              <input type="email" name="email" placeholder="Enter your email" class="email-field" id="mail">
 
-              <button type="submit" class="btn btn-primary">Subscribe</button>
+              <button type="submit" class="btn btn-primary">Get Your Quote</button>
             </form>
           </div>
 
@@ -750,6 +750,8 @@ Crafting captivating dining room aesthetics with attention to detail, creativity
     const name = document.getElementById('name');
     const phone = document.getElementById('email');
     const message = document.getElementById('message');
+    const mail = document.getElementById('mail');
+
     const submit = document.getElementById('submit');
     
     submit.addEventListener('submit',(e)=>{
@@ -758,6 +760,8 @@ Crafting captivating dining room aesthetics with attention to detail, creativity
         <h1>Name: </h1>${name.value}
         <br>
         <h1>Phone: </h1>${phone.value}
+        <br>
+        <h1>email: </h1>${mail.value}
         <br>
         <h1>message: </h1>${message.value}
         `;
